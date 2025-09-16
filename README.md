@@ -2,6 +2,8 @@
 
 A simple book recommendation system built with Flask (Python), HTML, and CSS. It helps users discover popular books and get personalized suggestions.
 
+<img width="1920" height="905" alt="Website Look" src="https://github.com/user-attachments/assets/e0eb55bd-c2f8-4604-8042-df07b625a65d" />
+
 ## Features
 - Popularity-based recommendations
 - Collaborative filtering
