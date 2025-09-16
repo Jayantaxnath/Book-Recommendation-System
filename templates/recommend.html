@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender System</title>
+    <link rel="stylesheet" href="./static/recommend.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for book icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo" style="flex: 1;">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Book Recommendation</span>
+        </div>
+        <div style="flex: 1; text-align: center; font-weight: bold; font-size: 1.2em;">
+            Recommender Engine
+        </div>
+        <ul class="nav-links" style="flex: 1; justify-content: flex-end; display: flex;">
+            <li><a href="/">Home</a></li>
+            <li><a href="/recommend">Recommendation</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="name_input">
+        <form action="/recommend_books" method="post" class="recommend-form">
+            <label for="book_name">Enter Book Name</label>
+            <input type="text" name="user_input" class="input_text" placeholder="e.g. Harry Potter" required>
+            <button type="submit" class="submit">Submit</button>
+        </form>
+    </div>
+
+    {% if data%}
+    <!-- Container for Books -->
+    <!-- Book-Title,Book-Author,num_ratings,avg_ratings,Image-URL-M -->
+    <div class="container">
+        {% for book in data %}
+        <div class="book-card">
+            <img src="{{book[2]}}" alt="Book Cover">
+            <h3>{{ book[0] }}</h3>
+            <p>Author: {{ book[1] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Container for Books -->
+    <!-- <div class="container">
+
+        <div class="book-card">
+            <img src="http://images.amazon.com/images/P/0439136350.01.MZZZZZZZ.jpg" alt="Book Cover">
+            <h3>The History of David Pole</h3>
+            <p>Author: David Pole</p>
+            <p>Ratings: 4.5</p>
+            <p>Avg Score: 45.2</p>
+        </div>
+        <div class="book-card">
+            <img src="http://images.amazon.com/images/P/0439136350.01.MZZZZZZZ.jpg" alt="Book Cover">
+            <h3>The History of David Pole</h3>
+            <p>Author: David Pole</p>
+            <p>Ratings: 4.5</p>
+            <p>Avg Score: 45.2</p>
+        </div>
+        <div class="book-card">
+            <img src="http://images.amazon.com/images/P/0439136350.01.MZZZZZZZ.jpg" alt="Book Cover">
+            <h3>The History of David Pole</h3>
+            <p>Author: David Pole</p>
+            <p>Ratings: 4.5</p>
+            <p>Avg Score: 45.2</p>
+        </div>
+        <div class="book-card">
+            <img src="http://images.amazon.com/images/P/0439136350.01.MZZZZZZZ.jpg" alt="Book Cover">
+            <h3>The History of David Pole</h3>
+            <p>Author: David Pole</p>
+            <p>Ratings: 4.5</p>
+            <p>Avg Score: 45.2</p>
+        </div>
+        <div class="book-card">
+            <img src="http://images.amazon.com/images/P/0439136350.01.MZZZZZZZ.jpg" alt="Book Cover">
+            <h3>The History of David Pole</h3>
+            <p>Author: David Pole</p>
+            <p>Ratings: 4.5</p>
+            <p>Avg Score: 45.2</p>
+        </div>
+    </div> -->
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="./static/contact.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for book icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo" style="flex: 1;">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Book Recommendation</span>
+        </div>
+        <div style="flex: 1; text-align: center; font-weight: bold; font-size: 1.2em;">
+            Contact Us
+        </div>
+        <ul class="nav-links" style="flex: 1; justify-content: flex-end; display: flex;">
+            <li><a href="/">Home</a></li>
+            <li><a href="/recommend">Recommendation</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ...existing code... -->
+
+    <!-- Contact Us Container (centered below navbar) -->
+    <div class="container">
+        <h2>Feel Free to Reach Out to me</h2>
+        <div class="info"><strong>Name:</strong> Jayanta Nath</div>
+        <div class="info"><strong>Email:</strong> <a href="mailto: nathjayanta772@gmail.com">nathjayanta772@gmail.com</a></div>
+        <div class="info">Thank you for visiting my code!</div>
+        <div class="social-links">
+            <a href="https://github.com/Jayantaxnath" target="_blank">
+                <img class="social-logo"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                    alt="GitHub Logo">
+                GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/jayanta-nath-972a04282/" target="_blank">
+                <img class="social-logo"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                    alt="LinkedIn Logo">
+                LinkedIn
+            </a>
+            <a href="https://www.kaggle.com/jayaantanaath" target="_blank">
+                <img class="social-logo"
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kaggle/kaggle-original.svg"
+                    alt="Kaggle Logo">
+                Kaggle
+            </a>
+        </div>
+    </div>
+
+    <!-- ...existing code... -->
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendation</title>
+    <link rel="stylesheet" href="./static/style.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for book icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo" style="flex: 1;">
+            <i class="fa-solid fa-book-open"></i>
+            <span>Book Recommendation</span>
+        </div>
+        <div style="flex: 1; text-align: center; font-weight: bold; font-size: 1.2em;">
+            Top 10 Popular Books
+        </div>
+        <ul class="nav-links" style="flex: 1; justify-content: flex-end; display: flex;">
+            <li><a href="/">Home</a></li>
+            <li><a href="/recommend">Recommendation</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Container for Books -->
+    <!-- Book-Title,Book-Author,num_ratings,avg_ratings,Image-URL-M -->
+    <div class="container">
+        {% for book in books %}
+        <div class="book-card">
+            <img src="{{ book['Image-URL-M'] }}" alt="Book Cover">
+            <h3>{{ book['Book-Title'] }}</h3>
+            <p>Author: {{ book['Book-Author'] }}</p>
+            <p>Ratings: {{ book['num_ratings'] }}</p>
+            <p>Avg Score: {{ book['avg_ratings'] }}</p>
+        </div>
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>
